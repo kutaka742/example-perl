@@ -24,7 +24,7 @@ pipeline {
                     bat "perl Build.PL"
                     bat "Build build"
                     bat "cover -test"
-                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cover_db', reportFiles: 'coverage.html', reportName: 'Coverage Report', reportTitles: ''])
+                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cover_db', reportFiles: 'coverage.html', reportName: 'Coverage Report', reportTitles: 'Coverage Report'])
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
     post{
         always{
             //成果物保存
-            archiveArtifacts artifacts: './blib/lib/*', fingerprint: true
+            archiveArtifacts artifacts: 'blib/lib/*', fingerprint: true
         }
         failure{
             echo "エラー"
