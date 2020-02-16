@@ -42,6 +42,19 @@ pipeline {
             steps{
                 script{
                     bat "cover -test -report SonarGeneric"
+                    bat """
+                        set BEFORE_STRING=blib/lib/
+                        set AFTER_STRING=lib/
+
+                        set INPUT_FILE=cover_db/sonar_generic.xml
+                        set OUTPUT_FILE=cover_db/sonar_generic.xml
+
+                        setlocal enabledelayedexpansion
+                        for /f "delims=" %%a in (%INPUT_FILE%) do (
+                        set line=%%a
+                        echo !line:%BEFORE_STRING%=%AFTER_STRING%!>>%OUTPUT_FILE%
+                        )
+                    """
                     bat "sonar-scanner"
                 }
             }
