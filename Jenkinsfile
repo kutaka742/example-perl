@@ -48,7 +48,7 @@ pipeline {
 
                         set INPUT_FILE=cover_db/sonar_generic_bk.xml
                         set OUTPUT_FILE=cover_db/sonar_generic.xml
-                        move %OUTPUT_FILE% %AFTER_STRING%
+                        move %OUTPUT_FILE% %INPUT_FILE%
                         setlocal enabledelayedexpansion
                         for /f "delims=" %%a in (%INPUT_FILE%) do (
                         set line=%%a
