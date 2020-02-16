@@ -23,8 +23,26 @@ pipeline {
                     bat "cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov"
                     bat "perl Build.PL"
                     bat "Build build"
+                }
+            }
+        }
+
+        //テスト&レポート
+        stage('Test & Report'){
+            steps{
+                script{
                     bat "cover -test"
                     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cover_db', reportFiles: 'coverage.html', reportName: 'Coverage Report', reportTitles: ''])
+                }
+            }
+        }
+
+        //SonarQube
+        stage('SonarQube'){
+            steps{
+                script{
+                    bat "cover -test -report SonarGeneric"
+                    bat "sonar-scanner"
                 }
             }
         }
