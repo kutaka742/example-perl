@@ -42,7 +42,7 @@ pipeline {
             steps{
                 script{
                     bat "cover -test -report SonarGeneric"
-                    bat "sonar-scanner -Dsonar.verbose=true"
+                    bat "sonar-scanner"
                 }
             }
         }
