@@ -8,18 +8,18 @@ SonarQubeでカバレッジや静的解析結果を管理する場合には別�
 
 1. Jenkinsプラグイン追加
 最低でも下記プラグインを追加
-  - htmlpublisher
-  - checkstyle (静的解析を取る場合)
+    - htmlpublisher
+    - checkstyle (静的解析を取る場合)
 
 ### Perl
 1. strawberryperlをインストール  
 http://strawberryperl.com/
 
 1. 追加モジュールをインストール
-  - Devel::Cover::Report::Codecov
-  - TAP::Formatter::JUnit
-  - Devel::Cover::Report::Clover
-  - Perl::Metrics::Lite (静的解析を取る場合)
+    - Devel::Cover::Report::Codecov
+    - TAP::Formatter::JUnit
+    - Devel::Cover::Report::Clover
+    - Perl::Metrics::Lite (静的解析を取る場合)
 
 ## サンプル実行
 ### リポジトリ
