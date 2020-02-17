@@ -1,5 +1,6 @@
 # Perlカバレッジ取得自動化
-SonarQubeでカバレッジや静的解析結果を管理する場合には別途設定が必要だが、本設定はJenkins上での管理を行う場合。また、Windowsでの設定となっているためLinuxの場合には必要に応じて読み替えること。
+SonarQubeでカバレッジや静的解析結果を管理する場合には別途設定が必要だが、本設定はJenkins上での管理を行う場合。また、Windowsでの設定となっているためLinuxの場合には必要に応じて読み替えること。  
+参考URL:https://swfz.hatenablog.com/entry/2016/04/12/035656
 
 ## 環境構築
 ### Jenkins
