@@ -20,7 +20,6 @@ pipeline {
         stage('Build'){
             steps{
                 script{
-                    bat "cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov"
                     bat "perl Build.PL"
                     bat "Build build"
                 }
